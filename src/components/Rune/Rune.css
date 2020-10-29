@@ -1,0 +1,8 @@
+.rune_list{
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rune_icon{
+    margin: auto;
+}

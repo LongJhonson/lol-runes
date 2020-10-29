@@ -1,23 +1,47 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from 'react';
+import List from '@material-ui/core/List';
+
+
+import Header from './components/Header';
+import Rune from './components/Rune';
+import { getRunes } from './api/api.js';
+
 
 function App() {
+
+  const [runesData, setRunesData] = useState([]);
+
+  useEffect(() => {
+    getRunes().then(response => {
+      const arrayRunes = [];
+      response.forEach(element => {
+        arrayRunes.push(element);
+      });
+      setRunesData(arrayRunes);
+    })
+  }, [])
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div>
+        <Header
+          test="texto de test"
+        />
+      </div>
+      <div >
+
+        <List
+          component="nav"
+          aria-labelledby="nested-list-subheader"
         >
-          Learn React
-        </a>
-      </header>
+          {runesData.map(item => {
+            return <Rune data={item} />
+          })}
+        </List>
+      </div>
+
     </div>
   );
 }
