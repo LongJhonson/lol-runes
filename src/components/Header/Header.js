@@ -13,12 +13,12 @@ export default function Header(props) {
 
     return (
         <div className="header">
-            <IconButton onClick={clickMenu}>
+            <IconButton onClick={clickMenu} color="secondary">
                 <MenuIcon className="header__icon" />
             </IconButton>
 
             <img className="header__icon" src="https://preview.redd.it/itq8rpld8va51.png?width=256&format=png&auto=webp&s=9701ba6228c29bf2d7e3dfffd45b9a3562507289"/>
-            <IconButton>
+            <IconButton color="secondary">
                 <PersonIcon className="header__icon" />
             </IconButton>
         </div>

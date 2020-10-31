@@ -1,11 +1,15 @@
-.header{
-    display:flex;
+.header {
+    display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.header__icon{
+.header__icon {
     object-fit: contain;
     height: 40px;
     color: white !important;
+}
+
+.MuiIconButton-colorSecondary {
+    background-color: white;
 }

@@ -20,7 +20,9 @@ function App() {
       });
       setRunesData(arrayRunes);
     })
-  }, [])
+  }, []);
+
+  const [visibleAll, setvisibleAll] = useState(false);
 
 
   return (
@@ -37,7 +39,11 @@ function App() {
           aria-labelledby="nested-list-subheader"
         >
           {runesData.map(item => {
-            return <Rune data={item} />
+            return <Rune
+              data={item}
+              initial={visibleAll}
+              toggleAll={setvisibleAll}
+            />
           })}
         </List>
       </div>

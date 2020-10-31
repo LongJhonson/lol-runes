@@ -2,15 +2,20 @@ import React from 'react'
 import { base_img_url } from '../../api/api';
 
 export default function Subrunes(props) {
-    console.log(props.data[0].runes);
-    const { runes } = props.data[0];
-    var parse = require('html-react-parser');
+    const runesArray = [];
+    for (let i = 0; i < props.data.length; i++) {
+        props.data[i].runes.forEach(element => {
+            runesArray.push(element);
+        });
+    }
+
+    const parse = require('html-react-parser');
 
     return (
         <div>
-            {runes.map(item => {
-                let { icon, name, longDesc } = item;
-                icon = item.icon.toLowerCase();
+            {runesArray.map(item => {
+                let { name, longDesc } = item;
+                const icon = item.icon.toLowerCase();
                 return (
                     <div>
                         <img src={`${base_img_url}${icon}`} />
