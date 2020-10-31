@@ -1,5 +1,5 @@
 const api = "http://ddragon.leagueoflegends.com/cdn/10.16.1/data/es_ES/runesReforged.json";
-const base_img_url = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/";
+const base_img_url = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/".toLowerCase();
 
 function getRunes() {
     return fetch(api)

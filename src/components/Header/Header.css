@@ -7,4 +7,5 @@
 .header__icon{
     object-fit: contain;
     height: 40px;
+    color: white !important;
 }

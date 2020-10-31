@@ -1,8 +1,16 @@
 .rune_list{
-    align-items: center;
-    justify-content: space-between;
+    /* align-items: center;
+    justify-content: space-between; */
+    border: 1px solid lightgray !important;
+    display: flex;
+    justify-content: center !important;
+    text-align: center !important;
 }
 
 .rune_icon{
-    margin: auto;
+    margin: 0;
+}
+
+.rune_name{
+    max-width: min-content !important;
 }
